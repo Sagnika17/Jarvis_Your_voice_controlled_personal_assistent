@@ -40,7 +40,7 @@ def processCommand(c):
                 speak(article['title'])
     
 if __name__ == "__main__": 
-    speak("Initializing Jarvis....")
+    speak("Initializing Mini Alexa....")
     while True:
         # obtain audio from the microphone
         r = sr.Recognizer()
@@ -51,10 +51,10 @@ if __name__ == "__main__":
               print("Listening...")
               audio = r.listen(source,timeout=2,phrase_time_limit=1)
            word=r.recognize_google(audio)
-           if (word.lower()=="jarvis"):
-               speak("yeah")
+           if (word.lower()=="Alexa"):
+               speak("Hi I am Mini Alexa How may I help you")
                with sr.Microphone() as source:
-                   print("Jarvis Active...")
+                   print("Mini Alexa Active...")
                    audio = r.listen(source)
                    command=r.recognize_google(audio)
                    processCommand(command)
